@@ -1,5 +1,3 @@
-
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -15,14 +13,21 @@ public class TransformBehaviour : MonoBehaviour
         transform.position = Vector3.zero;
     }
 
-    public void SetV3Value()
+    private void SetV3Value()
     {
         v3Data.value = transform.position;
     }
 
+    public void StartRepeatUntilFalse()
+    {
+        canRun.value = true;
+        StartCoroutine(SendTransform());
+    }
     private IEnumerator SendTransform()
     {
-        if (canRun.value)
+        yield return wffu;
+        
+        while (canRun.value) 
         {
             SetV3Value();
             Debug.Log("setting transform V3");
