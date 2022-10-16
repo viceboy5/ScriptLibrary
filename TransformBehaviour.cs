@@ -15,17 +15,19 @@ public class TransformBehaviour : MonoBehaviour
         transform.position = Vector3.zero;
     }
 
-    public void Setv3Value()
+    public void SetV3Value()
     {
         v3Data.value = transform.position;
     }
 
-    public IEnumerator SendTransform()
+    private IEnumerator SendTransform()
     {
-        while (canRun.value)
+        if (canRun.value)
         {
-            Setv3Value();
+            SetV3Value();
+            Debug.Log("setting transform V3");
             yield return wffu;
+            
         }
     }
 }
