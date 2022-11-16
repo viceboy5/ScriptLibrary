@@ -1,3 +1,4 @@
+using System;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,12 +9,17 @@ using UnityEngine.Events;
 public class TextLabelBehaviour : MonoBehaviour
 {
     private Text label;
-    public UnityEvent startEvent;
+    public UnityEvent startEvent, updateEvent;
 
     private void Start()
     {
         label = GetComponent<Text>();
         startEvent.Invoke();
+    }
+
+    private void Update()
+    {
+        updateEvent.Invoke();
     }
 
     public void UpdateLabel(FloatData obj)
