@@ -30,7 +30,6 @@ public class TransformBehaviour : MonoBehaviour
         while (canRun.value) 
         {
             SetV3Value();
-            Debug.Log("setting transform V3");
             yield return wffu;
             
         }
