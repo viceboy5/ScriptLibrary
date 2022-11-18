@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DestroyBehaviour : MonoBehaviour
 {
-    public float seconds = 1;
+    public float seconds;
     private WaitForSeconds wfsObj;
 
     private IEnumerator Start()
