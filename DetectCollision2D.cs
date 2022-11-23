@@ -9,6 +9,5 @@ public class DetectCollision2D : MonoBehaviour
     void OnCollisionEnter2D()  // Once the Trigger has been entered record collision in the argument variable "other"
     {
         collisionEvent.Invoke();
-        Debug.Log("Collision Detected");
     }
 }
