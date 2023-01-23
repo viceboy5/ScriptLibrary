@@ -4,10 +4,9 @@ using UnityEngine;
 public class Vector3Data : ScriptableObject
 {
     public Vector3 value;
-    public Vector3 newValue;
-    public void SetValue()
+    public void SetValue(Vector3Data newV3)
     {
-        value = newValue;
+        value = newV3.value;
     }
 
 }
