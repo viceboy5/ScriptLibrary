@@ -5,6 +5,8 @@ public class Instancer : ScriptableObject
 {
     public GameObject prefab;
     private int num;
+    private Vector3 nextSpawn;
+    public int spawnIncrement;
     public void CreateInstance ()
     {
         Instantiate(prefab);
@@ -13,6 +15,12 @@ public class Instancer : ScriptableObject
     public void CreateInstance(Vector3Data obj)
     {
         Instantiate(prefab, obj.value, Quaternion.identity);
+    }
+    
+    public void CreateInstanceIncrement(Vector3Data obj)
+    {
+        Instantiate(prefab, nextSpawn, Quaternion.identity);
+        nextSpawn.z += spawnIncrement;
     }
 
     public void CreateInstanceFromList(Vector3DataList obj)
