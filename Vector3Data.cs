@@ -4,9 +4,10 @@ using UnityEngine;
 public class Vector3Data : ScriptableObject
 {
     public Vector3 value;
-    
-    public void SetValue(float x, float y, float z)
+    public Vector3 newValue;
+    public void SetValue()
     {
-        value.Set(x,y,z);
+        value = newValue;
     }
+
 }
