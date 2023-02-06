@@ -1,7 +1,5 @@
-
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Events;
 
 [CreateAssetMenu]
 
@@ -37,7 +35,7 @@ public class IntData : ScriptableObject
         value += number;
     }
 
-    public void DisplayNumber(Text txt)
+    public void DisplayNumber(TextMeshProUGUI txt)
     {
         txt.text = value.ToString();
         Debug.Log("Value has been updated: " + value);
