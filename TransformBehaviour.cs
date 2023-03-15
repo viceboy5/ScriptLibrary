@@ -10,7 +10,6 @@ public class TransformBehaviour : MonoBehaviour
     public Vector3Data location;
     private WaitForSeconds wfsObj;
     private float holdTime = 3f;
-    public BoolData canRun;
 
     private void Awake()
     {
