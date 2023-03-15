@@ -9,7 +9,7 @@ public class TransformBehaviour : MonoBehaviour
     public UnityEvent onEnableEvent;
     public Vector3Data location;
     private WaitForSeconds wfsObj;
-    private float holdTime = 3f;
+    public float holdTime = 3f;
 
     private void Awake()
     {
