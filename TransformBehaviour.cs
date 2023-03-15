@@ -1,37 +1,38 @@
+// written with instruction from professor Anthony Romrell @ UVU
+
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TransformBehaviour : MonoBehaviour
 {
-    public Vector3Data v3Data;
-    private WaitForFixedUpdate wffu;
+    public UnityEvent onEnableEvent;
+    public Vector3Data location;
+    private WaitForSeconds wfsObj;
+    private float holdTime = 3f;
     public BoolData canRun;
-    
-    
-    public void ResetToZero()
+
+    private void Awake()
     {
-        transform.position = Vector3.zero;
+        wfsObj = new WaitForSeconds(holdTime);
     }
 
-    private void SetV3Value()
+    private IEnumerator Start()
     {
-        v3Data.value = transform.position;
+        yield return wfsObj;
+        gameObject.SetActive(false);
     }
 
-    public void StartRepeatUntilFalse()
+    private void OnEnable()
     {
-        canRun.value = true;
-        StartCoroutine(SendTransform());
+        onEnableEvent.Invoke();
+        StartCoroutine(Start());
     }
-    private IEnumerator SendTransform()
+
+    public void UpdatePosition()
     {
-        yield return wffu;
-        
-        while (canRun.value) 
-        {
-            SetV3Value();
-            yield return wffu;
-            
-        }
+        transform.position = location.value;
     }
+    
+    
 }
