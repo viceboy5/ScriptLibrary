@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagementBehaviour : MonoBehaviour
 {
-    public string sceneName;
-
-    public void LoadNewScene()
+    public void LoadNewScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
