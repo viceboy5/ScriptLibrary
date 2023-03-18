@@ -38,7 +38,6 @@ public class IntData : ScriptableObject
     public void DisplayNumber(TextMeshProUGUI txt)
     {
         txt.text = value.ToString();
-        Debug.Log("Value has been updated: " + value);
     }
 
 }
