@@ -46,4 +46,14 @@ public class Instancer : ScriptableObject
         num = Random.Range(0, obj.vector3List.Count);
         Instantiate(prefab, obj.vector3List[num].value, Quaternion.identity);
     }
+    
+    public void CreateInstanceIncrementListRandomly(Vector3DataList obj)
+    {
+        num = Random.Range(0, obj.vector3List.Count);
+        Instantiate(prefab, obj.vector3List[num].value, Quaternion.identity);
+        foreach (var t in obj.vector3List)
+        {
+            t.value.z += spawnIncrement;
+        }
+    }
 }
