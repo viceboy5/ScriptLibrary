@@ -5,9 +5,15 @@ public class GameActionHandler : MonoBehaviour
 {
     public GameAction gameActionObj;
     public UnityEvent onRaiseEvent;
-    private void Start()
+    
+    private void OnEnable()
     {
         gameActionObj.raise += Raise;
+    }
+
+    private void OnDisable()
+    {
+        gameActionObj.raise -= Raise;
     }
 
     private void Raise()
