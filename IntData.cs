@@ -39,5 +39,15 @@ public class IntData : ScriptableObject
     {
         txt.text = value.ToString();
     }
+    
+    public void Save()
+    {
+        PlayerPrefs.SetInt("savedValue", value);
+    }
+
+    public void Load()
+    {
+        value = PlayerPrefs.GetInt("savedValue");
+    }
 
 }
