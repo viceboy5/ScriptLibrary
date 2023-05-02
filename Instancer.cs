@@ -1,9 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
 public class Instancer : ScriptableObject
 {
     public GameObject prefab;
+    public GameObject[] prefabList;
     private int num;
     public Vector3Data nextSpawn;
     public int spawnIncrement;
@@ -41,7 +43,7 @@ public class Instancer : ScriptableObject
         }
     }
 
-    public void CreateInstanceListRandomly(Vector3DataList obj)
+    public void CreateInstanceListRandomV3(Vector3DataList obj)
     {
         num = Random.Range(0, obj.vector3List.Count);
         Instantiate(prefab, obj.vector3List[num].value, Quaternion.identity);
@@ -51,6 +53,17 @@ public class Instancer : ScriptableObject
     {
         num = Random.Range(0, obj.vector3List.Count);
         Instantiate(prefab, obj.vector3List[num].value, Quaternion.identity);
+        foreach (var t in obj.vector3List)
+        {
+            t.value.z += spawnIncrement;
+        }
+    }
+    
+    public void CreateInstanceListRandomV3RandomPrefab(Vector3DataList obj)
+    {
+        num = Random.Range(0, obj.vector3List.Count);
+        int randomIndex = Random.Range(0, prefabList.Length);
+        Instantiate(prefabList[randomIndex], obj.vector3List[num].value, Quaternion.identity);
         foreach (var t in obj.vector3List)
         {
             t.value.z += spawnIncrement;
