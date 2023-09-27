@@ -1,10 +1,11 @@
 using System;
 using System.Globalization;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Text))]
+[RequireComponent(typeof(TextMeshProUGUI))]
 
 public class TextLabelBehaviour : MonoBehaviour
 {
