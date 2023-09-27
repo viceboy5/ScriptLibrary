@@ -9,12 +9,12 @@ using UnityEngine.Events;
 
 public class TextLabelBehaviour : MonoBehaviour
 {
-    private Text label;
+    private TextMeshProUGUI label;
     public UnityEvent startEvent, updateEvent;
 
     private void Start()
     {
-        label = GetComponent<Text>();
+        label = GetComponent<TextMeshProUGUI>();
         startEvent.Invoke();
     }
 
