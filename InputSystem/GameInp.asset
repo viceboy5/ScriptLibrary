@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24bc6abac6448dd4c9706eb9fe6aea7d, type: 3}
-  m_Name: GameIMP
+  m_Script: {fileID: 11500000, guid: 7279113d5fc97d044a82d88675d61fb4, type: 3}
+  m_Name: GameInp
   m_EditorClassIdentifier: 
