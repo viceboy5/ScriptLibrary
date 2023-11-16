@@ -14,4 +14,14 @@ public class SceneManagementBehaviour : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+    }
+    
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+    }
 }
