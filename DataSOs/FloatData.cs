@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -14,6 +15,11 @@ public class FloatData : ScriptableObject
     public void UpdateValue (float num)
     {
         value += num;
+    }
+    
+    public void DisplayNumber(TextMeshProUGUI txt)
+    {
+        txt.text = value.ToString();
     }
 
     public void MatchValueX(GameObject obj)
@@ -42,5 +48,15 @@ public class FloatData : ScriptableObject
             value = obj.value;
         }
         
+    }
+    
+    public void Save()
+    {
+        PlayerPrefs.SetFloat("savedValue", value);
+    }
+
+    public void Load()
+    {
+        value = PlayerPrefs.GetFloat("savedValue");
     }
 }
